@@ -47,6 +47,13 @@ let arraySum = function(array) {
 // isEven(2) // true
 // isEven(9) // false
 let isEven = function(n) {
+  let num = Math.abs(n);
+  if (num === 1){
+    return false;
+  } else if (num === 0) {
+    return true;
+  }
+  return isEven(num-2);
 };
 
 // 5. Sum all integers below a given integer.
