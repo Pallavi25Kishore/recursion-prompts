@@ -32,6 +32,15 @@ let sum = function(array) {
 // 3. Sum all numbers in an array containing nested arrays.
 // arraySum([1,[2,3],[[4]],5]); // 15
 let arraySum = function(array) {
+  let computedSum = 0;
+  if (!Array.isArray(array)) {
+    return array;
+  } else {
+    array.forEach(function(item){
+      computedSum = computedSum + arraySum(item);
+      });
+  }
+  return computedSum;
 };
 
 // 4. Check if a number is even.
